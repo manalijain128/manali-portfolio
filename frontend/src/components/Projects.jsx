@@ -3,24 +3,46 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
+import image1 from "../assets/image1.png"
+import image2 from "../assets/image2.png"
+import image3 from "../assets/image3.png"
+
 const projects = [
-  {title:'Docs-now',desc:'AI-powered SaaS application',tags:['Next.js','TypeScript','Tailwind']},
-  {title:'Issue Tracker',desc:'Full-stack issue tracking',tags:['Next.js','TypeScript','Prisma']},
-  {title:'GameHub',desc:'Game discovery platform',tags:['React','RAWG API','Chakra UI']}
+  {
+    image:image1,
+    title: 'Secure Authentication & Authorization System',
+    desc: 'Full-stack authentication system featuring secure registration, JWT-based protected routes, role-based access control (RBAC), and Two-Factor Authentication (2FA) with OTP verification.',
+    tags: ['React', 'Node.js', 'Express.js', 'MongoDB', 'Redis', 'JWT', 'bcrypt']
+  },
+  {
+    image:image2,
+    title: 'AI-Powered Job Portal',
+    desc: 'Scalable microservices-based platform featuring recruiter dashboards, job workflows, event-driven communication, and AI tools like a Resume Analyzer and Career Guidance.',
+    tags: ['React.js', 'Node.js', 'Express.js', 'MongoDB', 'Redis', 'Kafka', 'Docker', 'TypeScript']
+  },
+  {
+    image:image3,
+    title: 'Banking System',
+    desc: 'Banking System Using Html,Css,Js',
+    tags: ['HTML', 'CSS', 'JavaScript']
+  },
+  
 ]
 
 const ProjectCard = ({ p }) => (
-  <div className="rounded-2xl overflow-hidden bg-gradient-to-b from-black/50 to-black/40 border border-gray-800 p-6 shadow-xl h-full mx-2 md:mx-0">
-    <div className="h-44 bg-[linear-gradient(90deg,#1e3a8a,#3b82f6)] rounded-md mb-4" />
-    <h4 className="text-xl font-bold text-white">{p.title}</h4>
-    <p className="text-gray-400 mt-2">{p.desc}</p>
-    <div className="mt-4 flex flex-wrap gap-2">
-      {p.tags.map(t => <span key={t} className="text-xs bg-gray-800/60 text-gray-200 px-2 py-1 rounded">{t}</span>)}
+  <div className="rounded-2xl overflow-hidden bg-gradient-to-b from-black/50 to-black/40 border border-gray-800 p-6 shadow-xl h-full mx-2 md:mx-0 flex flex-col justify-between">
+    <div>
+      <div className="h-44 rounded-md mb-4" >
+        <img src={p.image} alt={p.title} className="w-full h-full object-cover" />
+      </div>
+
+      <h4 className="text-xl font-bold text-white">{p.title}</h4>
+      <p className="text-gray-400 mt-2 text-sm leading-relaxed">{p.desc}</p>
+      <div className="mt-4 flex flex-wrap gap-2">
+        {p.tags.map(t => <span key={t} className="text-xs bg-gray-800/60 text-gray-200 px-2 py-1 rounded">{t}</span>)}
+      </div>
     </div>
-    <div className="mt-6 flex gap-3">
-      <a className="px-4 py-2 bg-black/60 border border-gray-700 rounded text-white hover:bg-black/70 cursor-pointer">Live Demo</a>
-      <a className="px-4 py-2 bg-transparent border border-gray-700 rounded text-gray-200 hover:bg-black/20 cursor-pointer">Source</a>
-    </div>
+   
   </div>
 );
 
@@ -65,7 +87,7 @@ const Projects = () => {
         </div>
 
         {/* Desktop View Grid */}
-        <div className="mt-10 hidden md:grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div className="mt-10 hidden md:grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {projects.map((p) => (
             <ProjectCard key={p.title} p={p} />
           ))}

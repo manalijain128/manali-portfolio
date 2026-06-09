@@ -50,8 +50,8 @@ const Contact = () => {
   };
   return (
     <section id="contact" className="py-0 xl:py-20">
-      <div className="max-w-6xl mx-auto px-6">
-        
+      <div className="max-w-2xl mx-auto px-6">
+
         {/* Heading */}
         <h3 className="text-center text-sm text-blue-400 uppercase tracking-wider">
           Communication
@@ -66,63 +66,9 @@ const Contact = () => {
         </p>
 
         {/* Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
+        <div className="grid grid-cols-1 gap-10">
 
           {/* LEFT FORM */}
-          <form onSubmit={handleSubmit} className="bg-white/5 backdrop-blur-lg p-8 rounded-2xl border border-white/10 shadow-xl">
-            <h4 className="text-xl text-white font-bold mb-2">
-              Send a Message
-            </h4>
-            <p className="text-gray-400 mb-6 text-sm">
-              I'll get back to you within 24 hours.
-            </p>
-
-            {/* Name */}
-            <label className="block text-xs text-gray-300 mb-2">
-              Your Name
-            </label>
-            <input
-              value={name}
-              onChange={(e) => setName(e.target.value)}
-              name="name"
-              className="w-full mb-4 p-3 rounded-md bg-white/5 border border-white/10 text-white focus:outline-none focus:border-blue-500"
-              placeholder="John Doe"
-              required
-            />
-
-            {/* Email */}
-            <label className="block text-xs text-gray-300 mb-2">
-              Your Email
-            </label>
-            <input
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              name="email"
-              type="email"
-              className="w-full mb-4 p-3 rounded-md bg-white/5 border border-white/10 text-white focus:outline-none focus:border-blue-500"
-              placeholder="john@example.com"
-              required
-            />
-
-            {/* Message */}
-            <label className="block text-xs text-gray-300 mb-2">
-              Your Message
-            </label>
-            <textarea
-              value={message}
-              onChange={(e) => setMessage(e.target.value)}
-              name="message"
-              className="w-full mb-6 p-3 rounded-md bg-white/5 border border-white/10 text-white h-40 focus:outline-none focus:border-blue-500"
-              placeholder="Tell me about your project..."
-              required
-            />
-
-            {/* Button */}
-            <button type="submit" disabled={loading} className="w-full py-3 rounded-full border border-blue-500 text-white font-semibold hover:bg-blue-600 transition-all duration-300">
-              {loading ? 'Sending...' : 'Send Message'}
-            </button>
-            <ToastContainer />
-          </form>
 
           {/* RIGHT SIDE */}
           <div className="flex flex-col gap-6">
@@ -164,17 +110,17 @@ const Contact = () => {
               </h5>
 
               <div className="flex gap-3">
-                <a className="w-10 h-10 rounded-md flex items-center justify-center bg-white/5 border border-white/10 hover:bg-blue-600 transition">
+                <a href="https://github.com/manalijain128/" target="_blank" className="w-10 h-10 rounded-md flex items-center justify-center bg-white/5 border border-white/10 hover:bg-blue-600 transition">
                   <FaGithub />
                 </a>
 
-                <a className="w-10 h-10 rounded-md flex items-center justify-center bg-white/5 border text-[#0077b5] border-white/10 hover:bg-blue-600 transition">
+                <a href="https://www.linkedin.com/in/manali-jain-02bba6238/" className="w-10 h-10 rounded-md flex items-center justify-center bg-white/5 border text-[#0077b5] border-white/10 hover:bg-black transition">
                   <FaLinkedinIn />
                 </a>
 
-              
 
-              
+
+
               </div>
             </div>
 

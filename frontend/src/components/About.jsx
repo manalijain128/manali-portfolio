@@ -133,13 +133,13 @@ programming languages.
                                     Frontend Developer
                                 </p>
 
-                                <motion.button 
+                                {/* <motion.button 
                                     whileHover={{ scale: 1.05 }}
                                     whileTap={{ scale: 0.95 }}
                                     className="w-full bg-blue-600 hover:bg-blue-500 text-white font-bold py-4 rounded-2xl flex items-center justify-center gap-3 transition-colors shadow-lg shadow-blue-900/20"
                                 >
                                     <FaDownload size={14} /> Resume
-                                </motion.button>
+                                </motion.button> */}
                             </div>
                         </div>
                     </motion.div>
