@@ -4,6 +4,6 @@ import tailwindcss from '@tailwindcss/vite'
 
 // https://vite.dev/config/
 export default defineConfig({
-  plugins: [react(),tailwindcss(),],
-  base: '/manali-portfolio/',   // 👈 MUST be your repo name
+  plugins: [react(), tailwindcss()],
+  base: '/manali-portfolio/',  // 👈 MUST match repo name exactly
 })
