@@ -1,0 +1,11 @@
+@import "tailwindcss";
+
+@config "../tailwind.config.cjs";
+
+/* Global dots overlay animation (small CSS, main layout via Tailwind) */
+.dots-overlay{position:fixed;inset:0;pointer-events:none;z-index:1}
+.dots-overlay .dot{position:absolute;width:6px;height:6px;border-radius:9999px;background:rgba(255,255,255,0.7);box-shadow:0 0 8px rgba(255,255,255,0.4)}
+
+@keyframes float-up{0%{transform:translateY(0) scale(1);opacity:0}10%{opacity:0.9}100%{transform:translateY(-1200px) scale(0.6);opacity:0}}
+
+.dot{animation:float-up linear infinite}
