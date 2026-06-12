@@ -38,10 +38,10 @@ const Footer = () => {
             <p className="text-sm mb-4">+91 9521499688</p>
 
             <div className="flex gap-3">
-              <a className="p-2 bg-white/10 rounded-md hover:bg-white/20">
+              <a href="https://github.com/manalijain128" target="_blank" rel="noopener noreferrer" className="p-2 bg-white/10 rounded-md hover:bg-white/20">
                 <FaGithub />
               </a>
-              <a className="p-2 bg-white/10 rounded-md hover:bg-white/20">
+              <a href="https://www.linkedin.com/in/manalijain128" target="_blank" rel="noopener noreferrer" className="p-2 bg-white/10 rounded-md hover:bg-white/20">
                 <FaLinkedin />
               </a>
              
