@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from 'react';
-import logo from "../assets/logo.png"
+import logo from "../assets/logo.png";
 
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   // Add glassmorphism effect on scroll
   useEffect(() => {
@@ -23,13 +24,13 @@ const Navbar = () => {
   return (
     <nav 
       className={`fixed top-0 w-full z-50 transition-all duration-300 ${
-        scrolled ? 'bg-gray-100/10 backdrop-blur-xl  py-3' : 'bg-transparent py-3'
+        scrolled ? 'bg-gray-100/10 backdrop-blur-xl py-3 border-b border-white/5' : 'bg-transparent py-3'
       }`}
     >
       <div className="max-w-7xl mx-auto px-6 flex justify-between items-center">
         {/* Logo / Branding */}
         <div className="flex items-center gap-2 group cursor-pointer">
-        <img src={logo} className='w-[20%] xl:w-[30%]'/>
+          <img src={logo} className='w-[20%] xl:w-[30%]' alt="Logo"/>
         </div>
 
         {/* Desktop Navigation */}
@@ -58,12 +59,54 @@ const Navbar = () => {
           </a>
         </div>
 
-        {/* Mobile Menu Toggle (Simplified) */}
-        <button className="md:hidden text-white">
-          <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16m-7 6h7" />
-          </svg>
+        {/* Mobile Menu Toggle */}
+        <button 
+          className="md:hidden text-white focus:outline-none z-50"
+          onClick={() => setIsMenuOpen(!isMenuOpen)}
+          aria-label="Toggle Menu"
+        >
+          {isMenuOpen ? (
+            /* Close Icon (X) */
+            <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+            </svg>
+          ) : (
+            /* Hamburger Icon */
+            <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16m-7 6h7" />
+            </svg>
+          )}
         </button>
+      </div>
+
+      {/* --- Mobile Dropdown Menu --- */}
+      <div 
+        className={`absolute top-full h-screen left-0 w-full bg-black backdrop-blur-lg border-b border-white/10 transition-all duration-300 md:hidden ${
+          isMenuOpen ? 'opacity-100 visible translate-y-0' : 'opacity-0 invisible -translate-y-2'
+        }`}
+      >
+        <ul className="flex flex-col p-6 gap-4">
+          {navLinks.map((link) => (
+            <li key={link.name}>
+              <a 
+                href={link.href} 
+                className="text-base font-medium text-gray-300 hover:text-white block py-2"
+                onClick={() => setIsMenuOpen(false)} // Closes menu when a link is clicked
+              >
+                {link.name}
+              </a>
+            </li>
+          ))}
+          <li className="pt-2 border-t border-white/10">
+            <a 
+              href="#contact" 
+              className="block text-center px-5 py-2 rounded-full border border-blue-500/50 text-blue-400 text-sm font-medium hover:bg-blue-500 hover:text-white transition-all"
+              onClick={() => setIsMenuOpen(false)}
+            >
+              Contact Me
+            </a>
+          </li>
+        </ul>
       </div>
     </nav>
   );
