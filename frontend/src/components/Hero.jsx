@@ -132,7 +132,7 @@ const Hero = () => {
                             </motion.a>
                             
                             <div className="flex gap-4">
-                                {[ {Icon: FaGithub, link: '#'}, {Icon: FaLinkedinIn, link: '#'} ].map((social, i) => (
+                                {[ {Icon: FaGithub, link: 'https://github.com/manalijain128'}, {Icon: FaLinkedinIn, link: 'https://www.linkedin.com/in/manali-jain-02bba6238/'} ].map((social, i) => (
                                     <motion.a
                                         key={i}
                                         whileHover={{ y: -3, color: "#60a5fa" }}
