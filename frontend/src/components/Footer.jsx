@@ -54,7 +54,7 @@ const Footer = () => {
 
         {/* BOTTOM */}
         <div className="flex flex-col sm:flex-row justify-center items-center text-sm gap-3 text-center sm:text-left">
-          <p>© 2026 Manali Jain. All rights reserved.</p>
+          <p>© {new Date().getFullYear()} Manali Jain. All rights reserved.</p>
          
         </div>
 
