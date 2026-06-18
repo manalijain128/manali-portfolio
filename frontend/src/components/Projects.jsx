@@ -18,6 +18,14 @@ const projects = [
     github: "https://github.com/manalijain128/mernstackauthentication-withredis",
     demo: "https://drive.google.com/file/d/1VdGAkcR4SeNgpGYs6MvyXeGsxTHzVvTC/view?usp=drivesdk",
   },
+    {
+    image: image4,
+    title: 'E-Commerce Website',
+    desc: 'Razorpay Integration in E-Commerce Website using MERN stack',
+    tags: ['React', 'Node.js', 'Express.js', 'MongoDB'],
+    github: "https://github.com/manalijain128/Razorpay-Integration-in-E-Commerce-Website",
+    demo: "https://drive.google.com/file/d/1s4Q5aRSNLJi2-4yg8ijygURD9cfLX7xF/view?usp=drivesdk",
+  },
   {
     image: image2,
     title: 'AI-Powered Job Portal',
@@ -34,14 +42,7 @@ const projects = [
     github: "https://github.com/manalijain128/Banking-System",
     demo: "https://drive.google.com/file/d/1J6kRQxeyZvYlfpp-_R7jopcPFItRJkV8/view?usp=drivesdk",
   },
-  {
-    image: image4,
-    title: 'Stationary Website',
-    desc: 'Statinary Website Using Html, Css, Bootstrap',
-    tags: ['HTML', 'CSS', 'JavaScript'],
-    github: "https://github.com/manalijain128/Stationary Website",
-    demo: "https://drive.google.com/file/d/14ytIn3bXG9SH56SzXtNE3XAOTO8vyYeU/view?usp=drivesdk",
-  },
+
   {
     image: image5,
     title: 'Quiz App',
